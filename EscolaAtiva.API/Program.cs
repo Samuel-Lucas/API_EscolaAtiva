@@ -1,6 +1,14 @@
+using EscolaAtiva.API.Persistence;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+var connectionString = builder.Configuration.GetConnectionString("DbEscola");
+// AddSingleton, Enquanto app rodar, estado é mantido
+
+builder.Services.AddDbContext<EscolaAtivaContext>(options =>
+    options.UseSqlServer(connectionString));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
