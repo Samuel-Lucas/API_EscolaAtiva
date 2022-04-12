@@ -12,6 +12,8 @@ namespace EscolaAtiva.API.Entities
             Perfil = perfil;
             Email = email;
             Senha = senha;
+
+            CreatedAt = DateTime.Now;
             Atividades = new List<Atividade>();
         }
 
@@ -23,5 +25,13 @@ namespace EscolaAtiva.API.Entities
         public string Senha { get; private set; }
         public DateTime CreatedAt { get; private set; }
         public IList<Atividade> Atividades { get; set; }
+
+        public void UpdateEntityUser(string nome, EGenero genero, string perfil, string email)
+        {
+            Nome = nome;
+            Genero = genero;
+            Perfil = perfil;
+            Email = email;
+        }
     }
 }
