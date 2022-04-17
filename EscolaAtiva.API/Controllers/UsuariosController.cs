@@ -48,7 +48,7 @@ namespace EscolaAtiva.API.Controllers
             _usuarioRepository.Add(usuario);
 
             return CreatedAtAction(
-                "GetById",
+                "GetUser",
                 new { id = usuario.IdUsuario },
                 usuario);
         }

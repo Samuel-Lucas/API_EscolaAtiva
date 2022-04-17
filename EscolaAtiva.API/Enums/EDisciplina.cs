@@ -2,9 +2,9 @@ namespace EscolaAtiva.API.Enums
 {
     public enum EDisciplina
     {
-        Linguagens,
-        Matematica,
-        CienciasDaNatureza,
-        CienciasHumanas
+        Linguagens = 0,
+        Matematica = 1,
+        CienciasDaNatureza = 2,
+        CienciasHumanas = 3
     }
 }

@@ -1,4 +1,5 @@
 using EscolaAtiva.API.Persistence;
+using EscolaAtiva.API.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,8 @@ var connectionString = builder.Configuration.GetConnectionString("DbEscola");
 
 builder.Services.AddDbContext<EscolaAtivaContext>(options =>
     options.UseSqlServer(connectionString));
+
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
