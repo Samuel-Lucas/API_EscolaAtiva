@@ -11,6 +11,8 @@ namespace EscolaAtiva.API.Entities
             Titulo = titulo;
             Descricao = descricao;
             IdAutor = idAutor;
+
+            CreatedAt = DateTime.Now;
         }
 
         public int IdAtividade { get; private set; }
